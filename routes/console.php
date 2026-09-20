@@ -13,4 +13,4 @@ Artisan::command('inspire', function () {
 
 Schedule::job(new SyncQuickBooksVendors)->everyMinute();
 Schedule::job(new SyncXeroContacts)->everyMinute();
-Schedule::job(new SyncGmailMessages)->everyFifteenMinutes();
+Schedule::job(new SyncGmailMessages)->everyMinute();

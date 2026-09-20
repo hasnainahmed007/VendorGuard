@@ -36,9 +36,9 @@ return [
     ],
 
     'quickbooks' => [
-        'client_id' => env('QB_CLIENT_ID', 'ABm9qvtavSMWRyCJkXVY1AT8jHT40pamIKga5zCVa3T2xHO8o5'),
-        'client_secret' => env('QB_CLIENT_SECRET', 'tfyECfprb0vu0WRa3KiP0PNJP119htIpj6HAfxxJ'),
-        'redirect' => env('QB_REDIRECT_URI', 'http://localhost:9000/app/integrations/quickbooks/callback'),
+        'client_id' => env('QB_CLIENT_ID'),
+        'client_secret' => env('QB_CLIENT_SECRET'),
+        'redirect' => env('QB_REDIRECT_URI'),
         'sandbox' => env('QB_SANDBOX', true),
         'minor_version' => env('QB_MINOR_VERSION', '75'),
         'scopes' => 'com.intuit.quickbooks.accounting openid profile email',
@@ -52,9 +52,9 @@ return [
     ],
 
     'xero' => [
-        'client_id' => env('XERO_CLIENT_ID', 'B65AB64D962B4A1AAEA656B0E825AA4F'),
-        'client_secret' => env('XERO_CLIENT_SECRET', 'TIpPCYZOjCMG2ld_7N4nI_TsmVjoiT-tkVfNKcxEi7TaOY96'),
-        'redirect' => env('XERO_REDIRECT_URI', 'http://localhost:9000/app/integrations/xero/callback'),
+        'client_id' => env('XERO_CLIENT_ID'),
+        'client_secret' => env('XERO_CLIENT_SECRET'),
+        'redirect' => env('XERO_REDIRECT_URI'),
         'scopes' => 'openid profile email accounting.contacts.read offline_access',
     ],
 
