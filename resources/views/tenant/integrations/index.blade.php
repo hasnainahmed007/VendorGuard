@@ -11,6 +11,9 @@
     @unless($quickbooksConfigured)
     <p class="mb-4 rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">QuickBooks is not configured yet. Set QB_CLIENT_ID, QB_CLIENT_SECRET and QB_REDIRECT_URI to enable connecting.</p>
     @endunless
+    @unless($xeroConfigured)
+    <p class="mb-4 rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">Xero is not configured yet. Set XERO_CLIENT_ID, XERO_CLIENT_SECRET and XERO_REDIRECT_URI to enable connecting.</p>
+    @endunless
     <div class="space-y-3">
         @forelse($integrations as $integration)
         <div class="flex items-center gap-3 rounded-[10px] border border-line bg-panel p-4">
@@ -28,9 +31,10 @@
         <p class="rounded-[10px] border border-line bg-panel p-6 text-center text-[13px] text-inksoft">No accounts connected yet.</p>
         @endforelse
     </div>
-    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+    <div class="mt-4 grid gap-3 sm:grid-cols-3">
         <a href="{{ route('tenant.integrations.connect', ['provider' => 'quickbooks']) }}" class="rounded-lg bg-ink px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect QuickBooks</a>
-        <a href="{{ route('tenant.integrations.connect', ['provider' => 'gmail']) }}" class="rounded-lg border border-line bg-panel px-4 py-2.5 text-center text-[13px] font-semibold">Connect Gmail (soon)</a>
+        <a href="{{ route('tenant.integrations.connect', ['provider' => 'xero']) }}" class="rounded-lg bg-ink px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect Xero</a>
+        <a href="{{ route('tenant.integrations.connect', ['provider' => 'gmail']) }}" class="rounded-lg border border-line bg-panel px-4 py-2.5 text-center text-[13px] font-semibold">Connect Gmail</a>
     </div>
 </section>
 @endsection

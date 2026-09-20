@@ -51,6 +51,13 @@ return [
         'scopes' => 'https://www.googleapis.com/auth/gmail.readonly',
     ],
 
+    'xero' => [
+        'client_id' => env('XERO_CLIENT_ID', 'B65AB64D962B4A1AAEA656B0E825AA4F'),
+        'client_secret' => env('XERO_CLIENT_SECRET', 'TIpPCYZOjCMG2ld_7N4nI_TsmVjoiT-tkVfNKcxEi7TaOY96'),
+        'redirect' => env('XERO_REDIRECT_URI', 'http://localhost:9000/app/integrations/xero/callback'),
+        'scopes' => 'openid profile email accounting.contacts.read offline_access',
+    ],
+
     'stripe' => [
         'secret' => env('STRIPE_SECRET'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),

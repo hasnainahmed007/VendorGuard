@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use App\Jobs\SyncGmailMessages;
 use App\Jobs\SyncQuickBooksVendors;
+use App\Jobs\SyncXeroContacts;
 use App\Models\Integration;
 use App\Models\Tenant;
 use App\Services\Email\GmailClient;
 use App\Services\QuickBooks\QuickBooksClient;
+use App\Services\Xero\XeroClient;
 use App\Support\TenantAccess;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -25,6 +27,7 @@ class IntegrationController extends Controller
         return view('tenant.integrations.index', [
             'integrations' => Integration::orderBy('provider')->get(),
             'quickbooksConfigured' => app(QuickBooksClient::class)->isConfigured(),
+            'xeroConfigured' => app(XeroClient::class)->isConfigured(),
         ]);
     }
 
@@ -32,13 +35,17 @@ class IntegrationController extends Controller
     {
         Gate::authorize('create', Integration::class);
 
-        if (! in_array($provider, ['quickbooks', 'gmail'], true)) {
+        if (! in_array($provider, ['quickbooks', 'gmail', 'xero'], true)) {
             return redirect()->route('tenant.tenants.index')
                 ->withErrors(['provider' => ucfirst($provider).' connections are not available yet.']);
         }
 
         if ($provider === 'gmail') {
             return $this->connectGmail($request);
+        }
+
+        if ($provider === 'xero') {
+            return $this->connectXero($request);
         }
 
         $client = app(QuickBooksClient::class);
@@ -75,6 +82,24 @@ class IntegrationController extends Controller
         return redirect()->away($client->authorizationUrl($state));
     }
 
+    private function connectXero(Request $request): RedirectResponse
+    {
+        $client = app(XeroClient::class);
+
+        if (! $client->isConfigured()) {
+            return redirect()->to(route('tenant.integrations.index'))
+                ->withErrors(['xero' => 'Xero credentials are not configured. Set XERO_CLIENT_ID, XERO_CLIENT_SECRET and XERO_REDIRECT_URI.']);
+        }
+
+        $state = Str::random(40);
+        $request->session()->put('xero_oauth_state', [
+            'state' => $state,
+            'tenant_id' => tenant()->getTenantKey(),
+        ]);
+
+        return redirect()->away($client->authorizationUrl($state));
+    }
+
     /**
      * OAuth callbacks run outside the tenant middleware: providers cannot
      * send our ?tenant= identifier back. The tenant travels inside the
@@ -83,7 +108,7 @@ class IntegrationController extends Controller
      */
     public function callback(Request $request, string $provider): RedirectResponse
     {
-        if (! in_array($provider, ['quickbooks', 'gmail'], true)) {
+        if (! in_array($provider, ['quickbooks', 'gmail', 'xero'], true)) {
             return redirect()->route('tenant.tenants.index')
                 ->withErrors(['provider' => ucfirst($provider).' connections are not available yet.']);
         }
@@ -94,9 +119,7 @@ class IntegrationController extends Controller
             'state' => ['required', 'string'],
         ]);
 
-        $saved = $request->session()->pull(
-            $provider === 'gmail' ? 'gmail_oauth_state' : 'qb_oauth_state'
-        );
+        $saved = $request->session()->pull($this->oauthSessionKey($provider));
 
         if (! is_array($saved)
             || ($saved['state'] ?? null) !== $input['state']
@@ -120,7 +143,79 @@ class IntegrationController extends Controller
             return $this->callbackGmail($request, $tenant->getKey());
         }
 
+        if ($provider === 'xero') {
+            return $this->callbackXero($input['code'], $tenant->getKey());
+        }
+
         return $this->callbackQuickBooks($input['code'], $input['realmId'], $tenant->getKey());
+    }
+
+    private function oauthSessionKey(string $provider): string
+    {
+        return match ($provider) {
+            'gmail' => 'gmail_oauth_state',
+            'xero' => 'xero_oauth_state',
+            default => 'qb_oauth_state',
+        };
+    }
+
+    /**
+     * One login may authorize several Xero organisations: create one
+     * integration row per connection until the accounting-org cap is hit.
+     */
+    private function callbackXero(string $code, string $tenantId): RedirectResponse
+    {
+        $client = app(XeroClient::class);
+
+        $tokens = $client->exchangeCode($code);
+
+        $connections = $client->getConnections($tokens['access_token']);
+
+        if ($connections === []) {
+            return redirect()->to(route('tenant.integrations.index'))
+                ->withErrors(['provider' => 'No Xero organisations were authorized.']);
+        }
+
+        $connected = 0;
+
+        foreach ($connections as $connection) {
+            $accountingCount = Integration::where('tenant_id', $tenantId)
+                ->whereIn('provider', Integration::ACCOUNTING_PROVIDERS)
+                ->count();
+
+            if ($accountingCount >= 2) {
+                break;
+            }
+
+            Integration::updateOrCreate(
+                [
+                    'tenant_id' => $tenantId,
+                    'provider' => 'xero',
+                    'external_account_id' => $connection['tenant_id'],
+                ],
+                [
+                    'access_token' => $tokens['access_token'],
+                    'refresh_token' => $tokens['refresh_token'] ?? null,
+                    'expires_at' => isset($tokens['expires_in'])
+                        ? now()->addSeconds((int) $tokens['expires_in'])
+                        : null,
+                    'status' => 'connected',
+                ]
+            );
+
+            $connected++;
+        }
+
+        if ($connected === 0) {
+            return redirect()->to(route('tenant.integrations.index'))
+                ->withErrors(['provider' => 'The MVP plan allows up to 2 connected accounting orgs.']);
+        }
+
+        SyncXeroContacts::dispatch();
+
+        return redirect()
+            ->to(route('tenant.vendors.index'))
+            ->with('success', "Xero connected ({$connected} organisation(s)). Contacts are syncing in the background.");
     }
 
     private function callbackQuickBooks(string $code, ?string $realmId, string $tenantId): RedirectResponse
