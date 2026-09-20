@@ -21,7 +21,7 @@
         @if(! $isActive)
         <form method="POST" action="{{ route('tenant.billing.checkout') }}" class="mt-4">
             @csrf
-            <button type="submit" class="w-full rounded-lg bg-ink px-4 py-2.5 text-[13.5px] font-bold text-white" @disabled(! $stripeConfigured)>Subscribe — $29/month</button>
+            <button type="submit" class="w-full rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-[13.5px] font-bold text-white" @disabled(! $stripeConfigured)>Subscribe — $29/month</button>
         </form>
         @unless($stripeConfigured)
         <p class="mt-2 text-[12.5px] text-inksoft">Billing is not configured yet (STRIPE_SECRET / STRIPE_PRICE_ID).</p>

@@ -32,8 +32,8 @@
         @endforelse
     </div>
     <div class="mt-4 grid gap-3 sm:grid-cols-3">
-        <a href="{{ route('tenant.integrations.connect', ['provider' => 'quickbooks']) }}" class="rounded-lg bg-ink px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect QuickBooks</a>
-        <a href="{{ route('tenant.integrations.connect', ['provider' => 'xero']) }}" class="rounded-lg bg-ink px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect Xero</a>
+        <a href="{{ route('tenant.integrations.connect', ['provider' => 'quickbooks']) }}" class="rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect QuickBooks</a>
+        <a href="{{ route('tenant.integrations.connect', ['provider' => 'xero']) }}" class="rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-center text-[13px] font-bold text-white">Connect Xero</a>
         <a href="{{ route('tenant.integrations.connect', ['provider' => 'gmail']) }}" class="rounded-lg border border-line bg-panel px-4 py-2.5 text-center text-[13px] font-semibold">Connect Gmail</a>
     </div>
 </section>

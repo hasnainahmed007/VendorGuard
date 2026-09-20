@@ -36,7 +36,7 @@
                 <h2 class="mb-1 text-[14px] font-bold">Trusted callback number</h2>
                 <p class="mb-3 text-[12.5px] text-inksoft">Call this number — never the number in the change request.</p>
                 @if($incident->vendor->verified_phone)
-                <a href="tel:{{ $incident->vendor->verified_phone }}" class="block rounded-lg bg-ink px-4 py-3 text-center font-mono text-[16px] font-bold text-white">Call {{ $incident->vendor->verified_phone }}</a>
+                <a href="tel:{{ $incident->vendor->verified_phone }}" class="block rounded-lg bg-tenant hover:bg-tenantdark px-4 py-3 text-center font-mono text-[16px] font-bold text-white">Call {{ $incident->vendor->verified_phone }}</a>
                 <p class="mt-2 text-[12px] text-inksoft">Verified {{ $incident->vendor->verified_at?->format('j M Y') ?? '—' }}</p>
                 @else
                 <p class="rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">No verified number on file. Verify this vendor before releasing payment.</p>
@@ -53,7 +53,7 @@
                         <textarea id="resolution_note" name="resolution_note" rows="3" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px]">{{ old('resolution_note') }}</textarea>
                     </div>
                     <div class="grid grid-cols-2 gap-2">
-                        <button type="submit" name="action" value="verified" class="rounded-lg bg-ink px-3 py-2.5 text-[13px] font-bold text-white">Verified — release</button>
+                        <button type="submit" name="action" value="verified" class="rounded-lg bg-tenant hover:bg-tenantdark px-3 py-2.5 text-[13px] font-bold text-white">Verified — release</button>
                         <button type="submit" name="action" value="blocked" class="rounded-lg bg-red-600 px-3 py-2.5 text-[13px] font-bold text-white">Confirmed fraud — block</button>
                         <button type="submit" name="action" value="dismissed" class="rounded-lg border border-line px-3 py-2.5 text-[13px] font-semibold">Dismiss</button>
                         <button type="submit" name="action" value="needs_info" class="rounded-lg border border-line px-3 py-2.5 text-[13px] font-semibold">Needs more info</button>

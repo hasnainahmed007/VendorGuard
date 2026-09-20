@@ -20,7 +20,7 @@
                 <p class="text-[12.5px] text-inksoft">Role: {{ $workspace['role'] }} · Plan: {{ $workspace['plan'] ?? 'trial' }}</p>
             </div>
             @if($workspace['is_current'])
-            <span class="rounded-md bg-ink px-2.5 py-1 text-[12px] font-bold text-white">Current</span>
+            <span class="rounded-md bg-tenant px-2.5 py-1 text-[12px] font-bold text-white">Current</span>
             @else
             <form method="POST" action="{{ route('tenant.tenants.switch') }}">
                 @csrf

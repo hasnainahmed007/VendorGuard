@@ -30,7 +30,7 @@
             <label for="invoice_note" class="mb-1 block text-[12.8px] font-semibold">First invoice note <span class="font-normal text-inksoft">(optional — pasted invoice text is screened for bank-change language)</span></label>
             <textarea id="invoice_note" name="invoice_note" rows="3" maxlength="2000" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13.2px]">{{ old('invoice_note') }}</textarea>
         </div>
-        <button type="submit" class="w-full rounded-lg bg-ink px-4 py-2.5 text-[13.5px] font-bold text-white">Add vendor</button>
+        <button type="submit" class="w-full rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-[13.5px] font-bold text-white">Add vendor</button>
     </form>
 </section>
 @endsection

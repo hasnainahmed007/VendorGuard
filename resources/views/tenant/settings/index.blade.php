@@ -23,7 +23,7 @@
             <label for="whatsapp_to" class="mb-1 block text-[12.8px] font-semibold">WhatsApp number (E.164, required when enabled)</label>
             <input id="whatsapp_to" name="whatsapp_to" value="{{ old('whatsapp_to', $settings->whatsapp_to) }}" maxlength="20" placeholder="+15551234567" class="w-full rounded-lg border border-line bg-bg px-3 py-2 font-mono text-[13.2px]">
         </div>
-        <button type="submit" class="w-full rounded-lg bg-ink px-4 py-2.5 text-[13.5px] font-bold text-white">Save preferences</button>
+        <button type="submit" class="w-full rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-[13.5px] font-bold text-white">Save preferences</button>
     </form>
 </section>
 @endsection

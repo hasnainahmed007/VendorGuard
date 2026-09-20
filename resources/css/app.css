@@ -25,6 +25,10 @@
   --color-badtint: #fbeae8;
   --color-muted: #eeeff5;
 
+  --color-tenant: #d4453d;
+  --color-tenantdark: #aa3731;
+  --color-tenanttint: #fbecea;
+
   --animate-fadein: fadein 0.15s ease;
 
   @keyframes fadein {

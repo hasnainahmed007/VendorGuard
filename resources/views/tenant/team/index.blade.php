@@ -57,7 +57,7 @@
                     <option value="owner">Owner</option>
                 </select>
             </div>
-            <button type="submit" class="rounded-lg bg-ink px-4 py-2 text-[13px] font-bold text-white">Send invite</button>
+            <button type="submit" class="rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2 text-[13px] font-bold text-white">Send invite</button>
         </form>
     </div>
     @if(count($invitations) > 0)

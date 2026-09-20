@@ -12,7 +12,7 @@
     </div>
     <div class="mb-4 flex flex-wrap gap-2">
         @foreach($statuses as $tab)
-        <a href="{{ route('tenant.incidents.index', ['status' => $tab]) }}" class="rounded-lg border px-3.5 py-2 text-[12.8px] font-semibold {{ $status === $tab ? 'border-ink bg-ink text-white' : 'border-line bg-panel text-inksoft' }}">{{ ucfirst($tab) }} ({{ $counts[$tab] ?? 0 }})</a>
+        <a href="{{ route('tenant.incidents.index', ['status' => $tab]) }}" class="rounded-lg border px-3.5 py-2 text-[12.8px] font-semibold {{ $status === $tab ? 'border-tenant bg-tenant hover:bg-tenantdark text-white' : 'border-line bg-panel text-inksoft' }}">{{ ucfirst($tab) }} ({{ $counts[$tab] ?? 0 }})</a>
         @endforeach
     </div>
     <div class="rounded-[10px] border border-line bg-panel">

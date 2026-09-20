@@ -9,7 +9,7 @@
             <h1 class="mb-1 text-xl font-bold tracking-tight">Vendor directory</h1>
             <p class="text-[13.2px] text-inksoft">Every vendor with their verified callback number and risk state.</p>
         </div>
-        <a href="{{ route('tenant.vendors.create') }}" class="rounded-lg bg-ink px-4 py-2.5 text-[13px] font-bold text-white">Add vendor</a>
+        <a href="{{ route('tenant.vendors.create') }}" class="rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-[13px] font-bold text-white">Add vendor</a>
     </div>
     <div class="rounded-[10px] border border-line bg-panel">
         <form method="GET" action="{{ route('tenant.vendors.index') }}" class="flex flex-wrap items-center gap-2.5 border-b border-line px-5 py-4">
