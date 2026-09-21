@@ -20,7 +20,6 @@
 <header class="border-b border-tenantdark/70 bg-tenant dark:border-black/30 dark:bg-tenantdark">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-6 py-3.5">
         <a href="{{ route('tenant.incidents.index') }}" class="text-[15px] font-extrabold tracking-tight text-white">VendorGuard</a>
-        <span class="rounded-md bg-black/20 px-2.5 py-1 text-[12px] font-semibold text-white">{{ $currentTenant?->displayName() ?? '—' }}</span>
         <nav class="ml-2 flex items-center gap-1 text-[13.2px] font-medium">
             <a href="{{ route('tenant.incidents.index') }}" class="rounded-lg px-3 py-2 text-white/85 hover:bg-white/15 hover:text-white {{ request()->routeIs('tenant.incidents.*') ? 'bg-white/25 font-semibold text-white' : '' }}">Incidents</a>
             <a href="{{ route('tenant.vendors.index') }}" class="rounded-lg px-3 py-2 text-white/85 hover:bg-white/15 hover:text-white {{ request()->routeIs('tenant.vendors.*') ? 'bg-white/25 font-semibold text-white' : '' }}">Vendors</a>

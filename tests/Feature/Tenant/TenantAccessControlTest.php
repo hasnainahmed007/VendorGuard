@@ -119,6 +119,32 @@ class TenantAccessControlTest extends TestCase
         $this->actingAs($manager)->get('/superadmin/dashboard')->assertOk();
     }
 
+    public function test_privileged_login_ignores_stored_tenant_url(): void
+    {
+        $admin = $this->makeCentralUser('storedco', 'admin');
+
+        // A stale tenant page (e.g. bookmark, expired session) must not drag
+        // a superadmin into a workspace they do not belong to.
+        $this->withSession(['url.intended' => 'http://localhost/app/incidents'])
+            ->post('/login', [
+                'email' => 'storedco@test.example',
+                'password' => 'password',
+            ])->assertRedirect('/superadmin/dashboard');
+    }
+
+    public function test_tenant_login_ignores_stored_central_url(): void
+    {
+        $owner = $this->makeTenantOwner('centralco');
+
+        $this->withSession(['url.intended' => 'http://localhost/superadmin/dashboard'])
+            ->post('/login', [
+                'email' => 'centralco@test.example',
+                'password' => 'password',
+            ])->assertRedirect('/app/incidents');
+
+        $this->cleanup($owner['tenant']);
+    }
+
     public function test_tenantless_user_gets_switcher_and_no_workspace(): void
     {
         $user = $this->makeCentralUser('lonelyco', 'tenant');

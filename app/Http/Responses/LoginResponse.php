@@ -18,10 +18,26 @@ class LoginResponse implements LoginResponseContract
         $user = $request->user();
 
         if (CentralAccess::isPrivileged($user)) {
-            return redirect()->intended(config('fortify.home', '/superadmin/dashboard'));
+            return redirect()->to(
+                $this->safeIntended($request, config('fortify.home', '/superadmin/dashboard'), '/superadmin')
+            );
         }
 
         return $this->tenantRedirect($request);
+    }
+
+    private function safeIntended(Request $request, string $fallback, string $prefix): string
+    {
+        $intended = (string) $request->session()->pull('url.intended', $fallback);
+        $parts = parse_url($intended) ?: [];
+        $host = $parts['host'] ?? null;
+        $path = $parts['path'] ?? '/';
+
+        if (($host !== null && $host !== $request->getHost()) || ! str_starts_with($path, $prefix)) {
+            return $fallback;
+        }
+
+        return $intended;
     }
 
     public static function tenantRedirect(Request $request): Response
@@ -31,13 +47,7 @@ class LoginResponse implements LoginResponseContract
             ? route('tenant.tenants.index')
             : '/app/incidents';
 
-        $intended = (string) $request->session()->pull('url.intended', $fallback);
-        $path = parse_url($intended, PHP_URL_PATH);
-
-        // Never land a tenant user on the central panel they cannot enter.
-        if (is_string($path) && str_starts_with($path, '/superadmin')) {
-            $intended = $fallback;
-        }
+        $intended = (new self)->safeIntended($request, $fallback, '/app');
 
         $response = redirect()->to($intended);
 
