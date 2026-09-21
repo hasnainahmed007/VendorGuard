@@ -29,7 +29,7 @@
                     autofocus
                     autocomplete="name"
                     placeholder="Jane Doe"
-                    class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('name') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
+                    class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-inksoft focus:outline-none focus:ring-2 focus:ring-inksoft/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('name') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
                 >
                 @error('name')
                     <p class="mt-1.5 text-[12.5px] font-medium text-bad" role="alert">{{ $message }}</p>
@@ -46,7 +46,7 @@
                     required
                     autocomplete="username"
                     placeholder="you@example.com"
-                    class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('email') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
+                    class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-inksoft focus:outline-none focus:ring-2 focus:ring-inksoft/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('email') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
                 >
                 @error('email')
                     <p class="mt-1.5 text-[12.5px] font-medium text-bad" role="alert">{{ $message }}</p>
@@ -63,7 +63,7 @@
                         required
                         autocomplete="new-password"
                         placeholder="••••••••"
-                        class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('password') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
+                        class="w-full rounded-lg border bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-inksoft focus:outline-none focus:ring-2 focus:ring-inksoft/20 dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0] @error('password') border-bad focus:border-bad focus:ring-bad/20 @else border-line dark:border-[#2a2c3d] @enderror"
                     >
                     @error('password')
                         <p class="mt-1.5 text-[12.5px] font-medium text-bad" role="alert">{{ $message }}</p>
@@ -79,7 +79,7 @@
                         required
                         autocomplete="new-password"
                         placeholder="••••••••"
-                        class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0]"
+                        class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-[#a6a9be] focus:border-inksoft focus:outline-none focus:ring-2 focus:ring-inksoft/20 dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5] dark:placeholder:text-[#7b7ea0]"
                     >
                 </div>
             </div>

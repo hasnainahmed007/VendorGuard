@@ -28,14 +28,14 @@
             <div class="grid grid-cols-1 gap-4 p-5 lg:grid-cols-2">
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">Audience</label>
-                    <select name="audience" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
+                    <select name="audience" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
                         <option value="all" @selected(old('audience', 'all') === 'all')>All users</option>
                         <option value="specific" @selected(old('audience') === 'specific')>Specific user…</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">User <span class="text-[11.3px] font-normal text-inksoft">(required for specific audience)</span></label>
-                    <select name="user_id" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
+                    <select name="user_id" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
                         <option value="">Select a user</option>
                         @foreach($users as $user)
                         <option value="{{ $user->id }}" @selected((string) old('user_id') === (string) $user->id)>{{ $user->name }} — {{ $user->email }}</option>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">Template <span class="text-[11.3px] font-normal text-inksoft">(optional)</span></label>
-                    <select name="template_id" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
+                    <select name="template_id" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
                         <option value="">No template</option>
                         @foreach($templates as $template)
                         <option value="{{ $template->id }}" @selected((string) old('template_id') === (string) $template->id)>{{ $template->name }}</option>
@@ -53,15 +53,15 @@
                 </div>
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">Title</label>
-                    <input type="text" name="title" value="{{ old('title') }}" placeholder="e.g. Your monthly report is ready" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
+                    <input type="text" name="title" value="{{ old('title') }}" placeholder="e.g. Your monthly report is ready" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
                 </div>
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">Message <span class="text-[11.3px] font-normal text-inksoft">(max 160 characters)</span></label>
-                    <textarea name="message" maxlength="160" class="min-h-[90px] w-full resize-y rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">{{ old('message') }}</textarea>
+                    <textarea name="message" maxlength="160" class="min-h-[90px] w-full resize-y rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">{{ old('message') }}</textarea>
                 </div>
                 <div class="flex flex-col gap-1.5 lg:col-span-2">
                     <label class="text-[12.6px] font-semibold text-[#3e4159] dark:text-[#d6d8e8]">Channel</label>
-                    <select name="channel" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
+                    <select name="channel" class="w-full rounded-lg border border-line bg-panel px-3 py-2.5 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a] dark:text-[#ededf5]">
                         <option value="push_in_app" @selected(old('channel', 'push_in_app') === 'push_in_app')>Push + In-app</option>
                         <option value="push" @selected(old('channel') === 'push')>Push only</option>
                         <option value="in_app" @selected(old('channel') === 'in_app')>In-app only</option>

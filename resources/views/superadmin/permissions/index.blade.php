@@ -15,7 +15,7 @@
         <div class="flex flex-wrap items-end gap-3 px-5 py-4 border-b border-line dark:border-[#2a2c3d]">
             <div class="flex-1 min-w-[200px]">
                 <label class="mb-1.5 block text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">User</label>
-                <select name="user_id" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
+                <select name="user_id" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
                     <option value="">Select a user</option>
                     @foreach($users as $user)
                     <option value="{{ $user->id }}">{{ ucfirst(str_replace('-', ' ', $user->name)) }} ({{ $user->email }})</option>
@@ -24,7 +24,7 @@
             </div>
             <div class="flex-1 min-w-[200px]">
                 <label class="mb-1.5 block text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">Role</label>
-                <select name="role_name" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
+                <select name="role_name" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
                     <option value="">Select a role</option>
                     @foreach($roles as $role)
                     <option value="{{ $role->name }}">{{ ucfirst(str_replace('-', ' ', $role->name)) }}</option>

@@ -17,7 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-bg font-sans text-sm leading-relaxed text-ink antialiased dark:bg-[#12131c] dark:text-[#ededf5]">
-<header class="border-b border-tenantdark/70 bg-tenant dark:border-black/30 dark:bg-tenantdark">
+<header class="border-b border-line bg-tenant dark:border-[#2a2c3d] dark:bg-tenantdark">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-6 py-3.5">
         <a href="{{ route('tenant.incidents.index') }}" class="text-[15px] font-extrabold tracking-tight text-white">VendorGuard</a>
         <nav class="ml-2 flex items-center gap-1 text-[13.2px] font-medium">

@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
                 <label class="mb-1.5 block text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">Permission Name</label>
-                <input name="name" value="{{ old('name', $permission->name) }}" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
+                <input name="name" value="{{ old('name', $permission->name) }}" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
                 <p class="mt-1 text-[11.8px] text-inksoft">Use dot notation: module.action (e.g., staff.index, dashboard.view)</p>
             </div>
         </div>

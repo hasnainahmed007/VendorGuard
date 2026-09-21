@@ -19,7 +19,7 @@
         <div class="flex flex-wrap items-end gap-3 px-5 py-4 border-b border-line dark:border-[#2a2c3d]">
             <div class="flex-1 min-w-[200px]">
                 <label class="mb-1.5 block text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">Role Name</label>
-                <input name="name" value="{{ old('name', ucfirst(str_replace('-', ' ', $role->name))) }}" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
+                <input name="name" value="{{ old('name', ucfirst(str_replace('-', ' ', $role->name))) }}" class="w-full rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-inksoft dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">
             </div>
         </div>
         <div class="overflow-x-auto px-5 py-4">
