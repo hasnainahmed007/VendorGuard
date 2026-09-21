@@ -8,9 +8,9 @@
     <p class="mb-6 text-[13.2px] text-inksoft">Confirm the trusted callback number from the vendor's original onboarding record — never a number from an email requesting a change. Every future incident is verified against this number.</p>
     <div class="rounded-[10px] border border-line bg-panel p-6">
         @if($vendor->isVerified())
-        <p class="mb-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-[13px] font-medium text-good">Currently verified: <span class="font-mono font-bold">{{ $vendor->verified_phone }}</span> ({{ $vendor->verified_at?->format('j M Y') }}). Re-enter below to update.</p>
+        <p class="mb-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-[13px] font-medium text-good dark:border-good/30 dark:bg-good/15 dark:text-[#3ed9a0]">Currently verified: <span class="font-mono font-bold">{{ $vendor->verified_phone }}</span> ({{ $vendor->verified_at?->format('j M Y') }}). Re-enter below to update.</p>
         @else
-        <p class="mb-4 rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">This vendor has no verified callback number yet.</p>
+        <p class="mb-4 rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700 dark:border dark:border-red-500/25 dark:bg-red-500/10 dark:text-red-300">This vendor has no verified callback number yet.</p>
         @endif
         <form method="POST" action="{{ route('tenant.vendors.verify.store', ['vendor' => $vendor->getKey()]) }}" class="space-y-4">
             @csrf
@@ -40,7 +40,7 @@
                     <input id="new_value_hash" name="new_value_hash" maxlength="64" placeholder="e.g. last4:5678" class="w-full rounded-lg border border-line bg-bg px-3 py-2 font-mono text-[13.2px]">
                 </div>
             </div>
-            <button type="submit" class="w-full rounded-lg border border-red-300 bg-red-50 px-4 py-2.5 text-[13.5px] font-bold text-red-700">Record change + hold payment</button>
+            <button type="submit" class="w-full rounded-lg border border-red-300 bg-red-50 px-4 py-2.5 text-[13.5px] font-bold text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300">Record change + hold payment</button>
         </form>
     </div>
 </section>

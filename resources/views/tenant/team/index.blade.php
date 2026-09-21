@@ -15,7 +15,7 @@
                 <thead><tr><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Name</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Email</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Role</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]"></th></tr></thead>
                 <tbody>
                     @foreach($members as $member)
-                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd]">
+                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd] dark:hover:bg-white/5">
                         <td class="px-5 py-[13px] align-middle font-semibold">{{ $member->name }}</td>
                         <td class="px-5 py-[13px] align-middle">{{ $member->email }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">{{ $member->role ?? 'member' }} <span class="text-inksoft">(home)</span></td>
@@ -23,7 +23,7 @@
                     </tr>
                     @endforeach
                     @foreach($grants as $grant)
-                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd]">
+                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd] dark:hover:bg-white/5">
                         <td class="px-5 py-[13px] align-middle font-semibold">{{ $grant->user?->name ?? '—' }}</td>
                         <td class="px-5 py-[13px] align-middle">{{ $grant->user?->email ?? '—' }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">{{ $grant->role }}</td>

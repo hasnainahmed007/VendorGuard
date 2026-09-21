@@ -28,7 +28,7 @@
                 <thead><tr><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Time</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Incident</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Vendor</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">User</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Action</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Note</th></tr></thead>
                 <tbody>
                     @forelse($entries as $entry)
-                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd]">
+                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd] dark:hover:bg-white/5">
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">{{ $entry->created_at->format('j M Y, g:i A') }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">@if($entry->incident_id)<a href="{{ route('tenant.incidents.show', ['incident' => $entry->incident_id]) }}" class="font-semibold underline">#{{ $entry->incident_id }}</a>@else—@endif</td>
                         <td class="px-5 py-[13px] align-middle">{{ $entry->incident?->vendor?->name ?? '—' }}</td>

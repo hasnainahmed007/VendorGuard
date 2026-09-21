@@ -51,12 +51,12 @@
 </header>
 <main class="mx-auto w-full max-w-6xl p-6">
     @if(session('success'))
-    <div class="mb-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-sm font-medium text-good">
+    <div class="mb-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-sm font-medium text-good dark:border-good/30 dark:bg-good/15 dark:text-[#3ed9a0]">
         {{ session('success') }}
     </div>
     @endif
     @if($errors->any())
-    <div class="mb-4 rounded-lg border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+    <div class="mb-4 rounded-lg border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300">
         <ul class="list-disc pl-5">
             @foreach($errors->all() as $error)
             <li>{{ $error }}</li>

@@ -28,12 +28,12 @@
                 <thead><tr><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Vendor</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Callback number</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Last verified</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Risk</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]">Hold</th><th class="whitespace-nowrap border-b border-line px-5 py-[11px] text-left text-[11.3px] font-bold tracking-wide text-[#9497ab]"></th></tr></thead>
                 <tbody>
                     @forelse($vendors as $vendor)
-                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd]">
+                    <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd] dark:hover:bg-white/5">
                         <td class="px-5 py-[13px] align-middle font-semibold">{{ $vendor->name }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle font-mono">{{ $vendor->verified_phone ?? '—' }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">{{ $vendor->verified_at?->format('j M Y') ?? 'never' }}</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">{{ $vendor->risk_score }}</td>
-                        <td class="whitespace-nowrap px-5 py-[13px] align-middle">@if($vendor->payment_hold)<span class="rounded bg-red-100 px-1.5 py-0.5 text-[11px] font-bold text-red-700">HELD</span>@else<span class="text-inksoft">—</span>@endif</td>
+                        <td class="whitespace-nowrap px-5 py-[13px] align-middle">@if($vendor->payment_hold)<span class="rounded bg-red-100 px-1.5 py-0.5 text-[11px] font-bold text-red-700 dark:bg-red-500/20 dark:text-red-200">HELD</span>@else<span class="text-inksoft">—</span>@endif</td>
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">@unless($vendor->isVerified())<a href="{{ route('tenant.vendors.verify', ['vendor' => $vendor->getKey()]) }}" class="font-semibold underline">Verify</a>@endunless
                         @can('delete', $vendor)
                             <form method="POST" action="{{ route('tenant.vendors.destroy', ['vendor' => $vendor->getKey()]) }}" class="inline" onsubmit="return confirm('Archive this vendor? History is kept for audit.');">

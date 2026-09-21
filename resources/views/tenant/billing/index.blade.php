@@ -13,7 +13,7 @@
             <dt class="text-inksoft">Subscription</dt><dd class="font-mono text-[12.5px]">{{ $tenant->subscription_status ?? 'trial' }}</dd>
         </dl>
         @if(request('checkout') === 'success')
-        <p class="mt-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-[13px] font-medium text-good">Checkout complete — your subscription is activating.</p>
+        <p class="mt-4 rounded-lg border border-good bg-goodtint px-4 py-3 text-[13px] font-medium text-good dark:border-good/30 dark:bg-good/15 dark:text-[#3ed9a0]">Checkout complete — your subscription is activating.</p>
         @endif
         @if(request('checkout') === 'cancelled')
         <p class="mt-4 rounded-lg border border-line bg-bg px-4 py-3 text-[13px] text-inksoft">Checkout was cancelled. You can subscribe any time.</p>

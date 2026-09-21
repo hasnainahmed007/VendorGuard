@@ -39,7 +39,7 @@
                 <a href="tel:{{ $incident->vendor->verified_phone }}" class="block rounded-lg bg-tenant hover:bg-tenantdark px-4 py-3 text-center font-mono text-[16px] font-bold text-white">Call {{ $incident->vendor->verified_phone }}</a>
                 <p class="mt-2 text-[12px] text-inksoft">Verified {{ $incident->vendor->verified_at?->format('j M Y') ?? '—' }}</p>
                 @else
-                <p class="rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">No verified number on file. Verify this vendor before releasing payment.</p>
+                <p class="rounded-lg bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700 dark:border dark:border-red-500/25 dark:bg-red-500/10 dark:text-red-300">No verified number on file. Verify this vendor before releasing payment.</p>
                 <a href="{{ route('tenant.vendors.verify', ['vendor' => $incident->vendor->getKey()]) }}" class="mt-2 block rounded-lg border border-line px-4 py-2.5 text-center text-[13px] font-semibold">Open verification wizard</a>
                 @endif
             </div>
