@@ -18,7 +18,7 @@
         @forelse($integrations as $integration)
         <div class="flex items-center gap-3 rounded-[10px] border border-line bg-panel p-4">
             <div class="min-w-0 flex-1">
-                <p class="text-[13.5px] font-bold">{{ ucfirst($integration->provider) }}@if($integration->external_account_id) <span class="font-mono font-medium text-inksoft">{{ $integration->external_account_id }}</span>@endif</p>
+                <p class="text-[13.5px] font-bold">{{ ucfirst($integration->provider) }}</p>
                 <p class="text-[12.5px] text-inksoft">Status: {{ $integration->status }}</p>
             </div>
             <form method="POST" action="{{ route('tenant.integrations.destroy', ['integration' => $integration->getKey()]) }}" onsubmit="return confirm('Disconnect this account?');">

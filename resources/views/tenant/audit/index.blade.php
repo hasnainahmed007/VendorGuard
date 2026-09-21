@@ -9,7 +9,7 @@
             <h1 class="mb-1 text-xl font-bold tracking-tight">Audit trail</h1>
             <p class="text-[13.2px] text-inksoft">Who reviewed what, when, and what action was taken — exportable for auditors.</p>
         </div>
-        <a href="{{ route('tenant.audit.index', ['export' => 'csv'] + request()->only('action')) }}" class="rounded-lg border border-line bg-panel px-4 py-2.5 text-[13px] font-semibold">Export CSV</a>
+        <a href="{{ route('tenant.audit.index', ['export' => 'csv'] + request()->only('action')) }}" class="rounded-lg bg-tenant hover:bg-tenantdark px-4 py-2.5 text-center text-[13px] font-bold text-white">Export CSV</a>
     </div>
     <div class="rounded-[10px] border border-line bg-panel">
         <form method="GET" action="{{ route('tenant.audit.index') }}" class="flex flex-wrap items-center gap-2.5 border-b border-line px-5 py-4">
