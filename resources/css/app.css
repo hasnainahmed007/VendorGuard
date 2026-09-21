@@ -35,10 +35,10 @@
 @theme {
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --color-brand: #5b4fe9;
-  --color-branddark: #463bc7;
-  --color-brandtint: #efedfe;
-  --color-brandtint2: #f5f4ff;
+  --color-brand: #d4453d;
+  --color-branddark: #aa3731;
+  --color-brandtint: #fbecea;
+  --color-brandtint2: #fdf1f0;
   --color-good: #1aa97a;
   --color-goodtint: #e7f8f1;
   --color-warn: #b8860b;

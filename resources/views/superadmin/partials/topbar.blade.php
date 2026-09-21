@@ -46,7 +46,7 @@
                     @if ($topbarEmail !== '')
                         <p class="mt-1 truncate text-[12.5px] text-inksoft dark:text-[#a5a8c2]">{{ $topbarEmail }}</p>
                     @endif
-                    <p class="mt-1 inline-flex rounded-full bg-brandtint px-2 py-0.5 text-[10.5px] font-bold tracking-wide text-branddark dark:bg-[#2a2650] dark:text-[#9089ff]">Super Admin</p>
+                    <p class="mt-1 inline-flex rounded-full bg-brandtint px-2 py-0.5 text-[10.5px] font-bold tracking-wide text-branddark dark:bg-[#3d2020] dark:text-[#f09690]">Super Admin</p>
                 </div>
                 <div class="border-t border-line dark:border-[#2a2c3d]"></div>
                 <div class="p-1.5">

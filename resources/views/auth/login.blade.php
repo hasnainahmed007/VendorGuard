@@ -5,7 +5,7 @@
 @section('content')
 <div class="w-full max-w-md">
     <div class="mb-6 flex items-center justify-center gap-2.5">
-        <div class="flex size-[38px] items-center justify-center rounded-[10px] bg-gradient-to-br from-[#6e62f2] to-branddark">
+        <div class="flex size-[38px] items-center justify-center rounded-[10px] bg-gradient-to-br from-[#d4453d] to-branddark">
             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-[20px]"><rect x="2" y="5" width="20" height="14" rx="3"/><circle cx="16" cy="12" r="2"/><path d="M2 9h20"/></svg>
         </div>
         <span class="text-[18px] font-bold tracking-tight">CashPilot</span>
@@ -16,7 +16,7 @@
         <p class="mt-1 text-[13.5px] text-inksoft dark:text-[#a5a8c2]">Sign in to your account to continue.</p>
 
         @if (session('status'))
-            <div class="mt-4 rounded-lg border border-line bg-brandtint2 px-3.5 py-2.5 text-[13.5px] font-medium text-branddark dark:border-[#2a2650] dark:bg-[#211f3c] dark:text-[#9089ff]" role="status">
+            <div class="mt-4 rounded-lg border border-line bg-brandtint2 px-3.5 py-2.5 text-[13.5px] font-medium text-branddark dark:border-[#3d2020] dark:bg-[#331b1a] dark:text-[#f09690]" role="status">
                 {{ session('status') }}
             </div>
         @endif
@@ -46,7 +46,7 @@
                 <div class="mb-1.5 flex items-center justify-between">
                     <label for="password" class="block text-[13px] font-semibold">Password</label>
                     @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="text-[12.5px] font-semibold text-brand hover:text-branddark dark:text-[#9089ff]">Forgot password?</a>
+                        <a href="{{ route('password.request') }}" class="text-[12.5px] font-semibold text-brand hover:text-branddark dark:text-[#f09690]">Forgot password?</a>
                     @endif
                 </div>
                 <input
@@ -84,7 +84,7 @@
     @if (Route::has('register'))
         <p class="mt-5 text-center text-[13.5px] text-inksoft dark:text-[#a5a8c2]">
             Don’t have an account?
-            <a href="{{ route('register') }}" class="font-semibold text-brand hover:text-branddark dark:text-[#9089ff]">Create one</a>
+            <a href="{{ route('register') }}" class="font-semibold text-brand hover:text-branddark dark:text-[#f09690]">Create one</a>
         </p>
     @endif
 </div>

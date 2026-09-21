@@ -31,6 +31,6 @@
     <textarea name="body" placeholder="e.g. Hi @{{name}}, your monthly report is ready." class="min-h-[110px] w-full resize-y rounded-lg border border-line bg-bg px-3 py-2 text-[13px] text-ink outline-none focus:border-brand dark:border-[#2a2c3d] dark:bg-[#12131c] dark:text-[#ededf5]">{{ old('body', $template->body ?? '') }}</textarea>
 </div>
 <div class="mt-4 flex items-center gap-2">
-    <input type="checkbox" name="is_active" value="1" @checked(old('is_active', $template->is_active ?? true)) class="size-4 accent-[#6e62f2]">
+    <input type="checkbox" name="is_active" value="1" @checked(old('is_active', $template->is_active ?? true)) class="size-4 accent-[#d4453d]">
     <label class="text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">Active</label>
 </div>

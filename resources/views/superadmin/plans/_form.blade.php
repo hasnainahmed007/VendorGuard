@@ -21,7 +21,7 @@
         </select>
     </div>
     <div class="flex items-end gap-2 pb-1">
-        <input id="is_popular" name="is_popular" type="checkbox" value="1" @checked(old('is_popular', $planPopular ?? false)) class="size-4 accent-[#6e62f2]">
+        <input id="is_popular" name="is_popular" type="checkbox" value="1" @checked(old('is_popular', $planPopular ?? false)) class="size-4 accent-[#d4453d]">
         <label for="is_popular" class="text-[12.6px] font-semibold text-ink dark:text-[#ededf5]">Mark as most popular</label>
     </div>
 </div>

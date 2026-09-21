@@ -10,7 +10,7 @@
             <p class="text-[13.2px] text-inksoft">Internal team members with admin panel access.</p>
         </div>
         <div class="flex gap-2.5">
-            <a href="{{ route('superadmin.staff.create') }}" class="inline-flex items-center gap-[7px] whitespace-nowrap rounded-lg border border-brand bg-brand px-[15px] py-2 text-[13.3px] font-semibold text-white hover:bg-branddark dark:border-[#7c72ff] dark:bg-[#7c72ff] dark:hover:bg-[#9089ff]">Invite staff</a>
+            <a href="{{ route('superadmin.staff.create') }}" class="inline-flex items-center gap-[7px] whitespace-nowrap rounded-lg border border-brand bg-brand px-[15px] py-2 text-[13.3px] font-semibold text-white hover:bg-branddark dark:border-[#e0655e] dark:bg-[#e0655e] dark:hover:bg-[#f09690]">Invite staff</a>
         </div>
     </div>
     <div class="rounded-[10px] border border-line bg-panel dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">
@@ -31,7 +31,7 @@
                     <tr class="border-b border-line last:border-b-0 hover:bg-[#fbfbfd] dark:border-[#2a2c3d] dark:hover:bg-[#242639]">
                         <td class="whitespace-nowrap px-5 py-[13px] align-middle">
                             <div class="flex items-center gap-2.5">
-                                <div class="flex size-[30px] flex-none items-center justify-center rounded-full bg-[#6e62f2] text-[11px] font-bold text-white">{{ strtoupper(substr($staff->name, 0, 2)) }}</div>
+                                <div class="flex size-[30px] flex-none items-center justify-center rounded-full bg-[#d4453d] text-[11px] font-bold text-white">{{ strtoupper(substr($staff->name, 0, 2)) }}</div>
                                 <div class="font-semibold text-ink dark:text-[#ededf5]">{{ ucfirst(str_replace('-', ' ', $staff->name)) }}</div>
                             </div>
                         </td>

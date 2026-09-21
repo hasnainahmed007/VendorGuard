@@ -40,7 +40,7 @@
         </div>
         <div class="flex items-center justify-between px-5 py-3.5 text-[12.3px] text-inksoft">
             <span>Showing 1–5 of 62,410 transactions</span>
-            <div class="flex gap-1.5"><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">‹</button><button type="button" class="size-7 rounded-[7px] border border-brand bg-brand text-xs font-bold text-white dark:border-[#7c72ff] dark:bg-[#7c72ff]">1</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">2</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">3</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">›</button></div>
+            <div class="flex gap-1.5"><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">‹</button><button type="button" class="size-7 rounded-[7px] border border-brand bg-brand text-xs font-bold text-white dark:border-[#e0655e] dark:bg-[#e0655e]">1</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">2</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">3</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">›</button></div>
         </div>
     </div>
 </section>
@@ -70,7 +70,7 @@
         </div>
         <div class="flex items-center justify-between px-5 py-3.5 text-[12.3px] text-inksoft">
             <span>Showing 1–4 of 96 refund requests</span>
-            <div class="flex gap-1.5"><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">‹</button><button type="button" class="size-7 rounded-[7px] border border-brand bg-brand text-xs font-bold text-white dark:border-[#7c72ff] dark:bg-[#7c72ff]">1</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">2</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">›</button></div>
+            <div class="flex gap-1.5"><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">‹</button><button type="button" class="size-7 rounded-[7px] border border-brand bg-brand text-xs font-bold text-white dark:border-[#e0655e] dark:bg-[#e0655e]">1</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">2</button><button type="button" class="size-7 rounded-[7px] border border-line bg-panel text-xs text-inksoft dark:border-[#2a2c3d] dark:bg-[#1b1d2a]">›</button></div>
         </div>
     </div>
 </section>

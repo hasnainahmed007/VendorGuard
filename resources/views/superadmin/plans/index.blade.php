@@ -10,7 +10,7 @@
             <p class="text-[13.2px] text-inksoft">Subscription plans available to CashPilot users.</p>
         </div>
         <div class="flex gap-2.5">
-            <a href="{{ route('superadmin.plans.create') }}" class="inline-flex items-center gap-[7px] whitespace-nowrap rounded-lg border border-brand bg-brand px-[15px] py-2 text-[13.3px] font-semibold text-white hover:bg-branddark dark:border-[#7c72ff] dark:bg-[#7c72ff] dark:hover:bg-[#9089ff] [&>svg]:size-[14px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create plan</a>
+            <a href="{{ route('superadmin.plans.create') }}" class="inline-flex items-center gap-[7px] whitespace-nowrap rounded-lg border border-brand bg-brand px-[15px] py-2 text-[13.3px] font-semibold text-white hover:bg-branddark dark:border-[#e0655e] dark:bg-[#e0655e] dark:hover:bg-[#f09690] [&>svg]:size-[14px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create plan</a>
         </div>
     </div>
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -26,8 +26,8 @@
             </ul>
             <div class="mt-0.5 flex items-center justify-between border-t border-line pt-3 text-[11.6px] text-inksoft dark:border-[#2a2c3d]"><span>Created 12 Jan 2025</span><div class="flex gap-1.5"><a href="{{ route('superadmin.plans.edit', 'free') }}" title="Edit plan" class="flex size-7 items-center justify-center rounded-[7px] text-[#8b8fa3] hover:bg-muted hover:text-ink dark:text-[#9497b8] dark:hover:bg-[#242639] dark:hover:text-[#ededf5] [&>svg]:size-[14.5px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></a><button type="button" title="Delete plan" class="flex size-7 items-center justify-center rounded-[7px] text-[#8b8fa3] hover:bg-muted hover:text-bad dark:text-[#9497b8] dark:hover:bg-[#242639] dark:hover:text-[#f2685c] [&>svg]:size-[14.5px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></div>
         </div>
-        <div class="relative rounded-[10px] border border-brand bg-panel p-[22px] ring-1 ring-brand dark:border-[#7c72ff] dark:bg-[#1b1d2a] dark:ring-[#7c72ff]">
-            <span class="absolute -top-[11px] left-[22px] rounded-full bg-brand px-2.5 py-1 text-[10.6px] font-bold text-white dark:bg-[#7c72ff]">Most popular</span>
+        <div class="relative rounded-[10px] border border-brand bg-panel p-[22px] ring-1 ring-brand dark:border-[#e0655e] dark:bg-[#1b1d2a] dark:ring-[#e0655e]">
+            <span class="absolute -top-[11px] left-[22px] rounded-full bg-brand px-2.5 py-1 text-[10.6px] font-bold text-white dark:bg-[#e0655e]">Most popular</span>
             <div class="mb-1 text-[15px] font-bold">Pro</div>
             <div class="mb-4 text-[12.3px] text-inksoft">For individuals serious about budgeting</div>
             <div class="mb-0.5 text-[26px] font-extrabold tracking-tight">$12 <span class="text-[12.5px] font-semibold text-inksoft">/ month</span></div>
